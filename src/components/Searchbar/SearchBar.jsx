@@ -11,7 +11,6 @@ const SearchBar = ({ onSubmit }) => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    console.log('Submit button clicked with query:', query);
     onSubmit(query);
   };
 

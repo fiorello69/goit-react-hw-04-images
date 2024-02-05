@@ -8,7 +8,6 @@ import styles from './App.module.css';
 import { fetchImages as fetchImagesData } from './Api/Api';
 
 const App = () => {
-  console.log('App rendered');
   const [images, setImages] = useState([]);
   const [query, setQuery] = useState('');
   const [page, setPage] = useState(1);
@@ -19,7 +18,6 @@ const App = () => {
 
   const fetchData = useCallback(async () => {
     try {
-      console.log('Calling fetchData');
       const newImages = await fetchImagesData(query, page);
 
       if (page === 1) {
@@ -41,7 +39,6 @@ const App = () => {
   }, [query, page, setImages, setHasMoreImages, setLoading]);
 
   const handleSearch = newQuery => {
-    console.log('handleSearch called with query:', newQuery);
     setQuery(newQuery);
     setPage(1);
     setImages([]);
